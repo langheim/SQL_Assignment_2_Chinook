@@ -16,7 +16,7 @@ namespace SQL_Assignment_2_Chinook.Data
         public ICustomerRepository Customer { get; private set; }
         public IFinancialRepository Financials { get; private set; }
         public IGenreRepository Genre { get; private set; }
-        
+
         public int Complete()
         {
             return _context.SaveChanges();

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-#nullable disable
+﻿#nullable disable
 
 namespace SQL_Assignment_2_Chinook.Model
 {
