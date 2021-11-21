@@ -1,4 +1,5 @@
-﻿using SQL_Assignment_2_Chinook.Interface;
+﻿using SQL_Assignment_2_Chinook.Model;
+using SQL_Assignment_2_Chinook.Interface;
 using SQL_Assignment_2_Chinook.Model;
 using System;
 using System.Collections.Generic;
@@ -15,8 +16,8 @@ namespace SQL_Assignment_2_Chinook.Data
         {
             var genreTop = ChinookContext.Genres.ToArray();
             var query = (from q in genreTop.OrderByDescending(s => s.Name).Take(3).Select(s => s.Name).Distinct()
-                         from i in genreTop
-                         where q == i.Name
+            from i in genreTop
+            where q == i.Name
                          as Number
                          from Genre as g
                          join
