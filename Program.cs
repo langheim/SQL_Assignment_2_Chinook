@@ -163,7 +163,6 @@ namespace SQL_Assignment_2_Chinook
                 Console.WriteLine();
                 Console.WriteLine("Press [Enter] to Finish");
                 Console.ReadLine();
-                //Console.Clear();
             }
         }
     }

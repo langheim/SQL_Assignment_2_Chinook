@@ -13,6 +13,8 @@ namespace SQL_Assignment_2_Chinook.Data
         }
         /// <summary>
         /// Returns the genre that corresponds to the most tracks invoiced to customer. Customer ID as param
+        /// Created with SQL string since I used to long to get LINQ to work with table join. This worked in .Net 3.0
+        /// Query is listed in comment bellow.
         /// </summary>
         /// <param name="id"></param>
         public IEnumerable<Genre> GetPopularGenreByCustomer(int id)

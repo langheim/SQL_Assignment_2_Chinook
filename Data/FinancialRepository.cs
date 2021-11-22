@@ -10,6 +10,10 @@ namespace SQL_Assignment_2_Chinook.Data
         public FinancialRepository(ChinookContext context) : base(context)
         {
         }
+        /// <summary>
+        /// Create a list for the return type, then check for customer ID with the higest amount of invices
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Invoice> GetHighSpenders()
         {
             List<Invoice> listReturn = new();

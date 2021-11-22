@@ -10,6 +10,11 @@ namespace SQL_Assignment_2_Chinook.Data
         public CustomerRepository(ChinookContext context) : base(context)
         {
         }
+        /// <summary>
+        /// Get the total number of Customers by coutry.
+        /// Creating a list then using Dbcontext to create the returned list
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Country> GetNrOfCustomersByCountry()
         {
             List<Country> listReturn = new();
@@ -26,6 +31,12 @@ namespace SQL_Assignment_2_Chinook.Data
             }
             return listReturn;
         }
+        /// <summary>
+        /// Create a list for the return then get customer by partial firstname, lastname via DbContext 
+        /// </summary>
+        /// <param name="firstname"></param>
+        /// <param name="lastname"></param>
+        /// <returns></returns>
         public IEnumerable<Customer> GetNamedCustomers(string firstname, string lastname)
         {
             List<Customer> listReturn = new();
