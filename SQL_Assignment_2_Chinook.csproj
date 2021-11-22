@@ -8,13 +8,10 @@
   <ItemGroup>
     <Compile Remove="SQLAssignment_2_ChinookTests\**" />
     <Compile Remove="SQL_Assignment_2_Chinook\**" />
-    <Compile Remove="SQL_Assignment_2_Chinook_Tests\**" />
     <EmbeddedResource Remove="SQLAssignment_2_ChinookTests\**" />
     <EmbeddedResource Remove="SQL_Assignment_2_Chinook\**" />
-    <EmbeddedResource Remove="SQL_Assignment_2_Chinook_Tests\**" />
     <None Remove="SQLAssignment_2_ChinookTests\**" />
     <None Remove="SQL_Assignment_2_Chinook\**" />
-    <None Remove="SQL_Assignment_2_Chinook_Tests\**" />
   </ItemGroup>
 
   <ItemGroup>

@@ -5,9 +5,18 @@ namespace SQL_Assignment_2_Chinook.Interface
 {
     public interface ICustomerRepository : IRepository<Customer>
     {
-        IEnumerable<Customer> GetNrOfCustomersByCountry();
-        IEnumerable<Customer> GetLimitedListOfCustomers(int offset, int limit);
-        IEnumerable<Customer> GetAllCustomers();
-        IEnumerable<Customer> GetNamedCustomers(string name);
+        /// <summary>
+        /// Spesific functions not based on generic IRepository
+        /// </summary>
+        /// <returns></returns>
+        /// Get number of Customers based on Contry
+        IEnumerable<Country> GetNrOfCustomersByCountry();
+        /// <summary>
+        /// Get customers based on LIKE search
+        /// </summary>
+        /// <param name="firstname"></param>
+        /// <param name="lastname"></param>
+        /// <returns></returns>
+        IEnumerable<Customer> GetNamedCustomers(string firstname, string lastname);
     }
 }

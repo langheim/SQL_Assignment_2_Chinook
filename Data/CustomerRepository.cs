@@ -1,6 +1,5 @@
 ﻿using SQL_Assignment_2_Chinook.Interface;
 using SQL_Assignment_2_Chinook.Model;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -11,62 +10,42 @@ namespace SQL_Assignment_2_Chinook.Data
         public CustomerRepository(ChinookContext context) : base(context)
         {
         }
-        public IEnumerable<Customer> GetNrOfCustomersByCountry()
+        public IEnumerable<Country> GetNrOfCustomersByCountry()
         {
+            List<Country> listReturn = new();
+
             var customersByCountry = ChinookContext.Customers.ToArray().GroupBy(t => t.Country).ToList().OrderByDescending(c => c.Count());
             foreach (var nameGroup in customersByCountry)
             {
-                Console.WriteLine($"{nameGroup.Key}\t{nameGroup.Count()}");
+                Country country = new()
+                {
+                    Name = nameGroup.Key,
+                    NumberOfCustomers = nameGroup.Count()
+                };
+                listReturn.Add(country);
             }
-            return customersByCountry.First();
+            return listReturn;
         }
-        public IEnumerable<Customer> GetLimitedListOfCustomers(int offset, int limit)
+        public IEnumerable<Customer> GetNamedCustomers(string firstname, string lastname)
         {
-            var getAllCustomers = ChinookContext.Customers.ToList().Skip(offset).Take(limit);
-            foreach (Customer customer in getAllCustomers)
-            {
-                Console.WriteLine("ID: {0}\tName: {1} {2}\tCountry: {3}\tPostalCode: {4}\tPhoneNumber: {5}\tE-Mail: {6}",
-                    customer.CustomerId,
-                    customer.FirstName,
-                    customer.LastName,
-                    customer.Country,
-                    customer.PostalCode,
-                    customer.Phone,
-                    customer.Email);
-            }
-            return getAllCustomers.ToArray();
-        }
-        public IEnumerable<Customer> GetAllCustomers()
-        {
-            var getAllCustomers = ChinookContext.Customers.ToList();
-            foreach (Customer customer in getAllCustomers)
-            {
-                Console.WriteLine("ID: {0}\tName: {1} {2}\tCountry: {3}\tPostalCode: {4}\tPhoneNumber: {5}\tE-Mail: {6}",
-                    customer.CustomerId,
-                    customer.FirstName,
-                    customer.LastName,
-                    customer.Country,
-                    customer.PostalCode,
-                    customer.Phone,
-                    customer.Email);
-            }
-            return null;
-        }
-        public IEnumerable<Customer> GetNamedCustomers(string name)
-        {
-            var getNamed = ChinookContext.Customers.AsEnumerable().Where(s => s.FirstName.Contains(name) || s.LastName.Contains(name)).ToList();
+            List<Customer> listReturn = new();
+            var getNamed = ChinookContext.Customers.AsEnumerable().Where(s => s.FirstName.Contains(firstname) || s.LastName.Contains(lastname)).ToList();
             foreach (Customer customer in getNamed)
             {
-                Console.WriteLine("ID: {0}\tName: {1} {2}\tCountry: {3}\tPostalCode: {4}\tPhoneNumber: {5}\tE-Mail: {6}",
-                        customer.CustomerId,
-                        customer.FirstName,
-                        customer.LastName,
-                        customer.Country,
-                        customer.PostalCode,
-                        customer.Phone,
-                        customer.Email);
+                Customer customer1 = new()
+                {
+                    CustomerId = customer.CustomerId,
+                    FirstName = customer.FirstName,
+                    LastName = customer.LastName,
+                    Country = customer.Country,
+                    PostalCode = customer.PostalCode,
+                    Phone = customer.Phone,
+                    Email = customer.Email
+
+                };
+                listReturn.Add(customer1);
             }
-            return null;
+            return listReturn;
         }
         public ChinookContext ChinookContext
         {

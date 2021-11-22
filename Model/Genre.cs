@@ -13,6 +13,7 @@ namespace SQL_Assignment_2_Chinook.Model
 
         public int GenreId { get; set; }
         public string Name { get; set; }
+        public int Count { get; set; }
 
         public virtual ICollection<Track> Tracks { get; set; }
     }
