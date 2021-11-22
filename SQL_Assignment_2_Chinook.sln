@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQL_Assignment_2_Chinook", "SQL_Assignment_2_Chinook.csproj", "{28B8E19C-6BA2-4004-B4F9-685EB9B32286}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SQL_Assignment_2_Chinook", "SQL_Assignment_2_Chinook.csproj", "{28B8E19C-6BA2-4004-B4F9-685EB9B32286}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLAssignment_2_ChinookTests", "SQLAssignment_2_ChinookTests\SQLAssignment_2_ChinookTests.csproj", "{CAD1BE6E-2936-4641-BC36-DEF9BAD79810}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{28B8E19C-6BA2-4004-B4F9-685EB9B32286}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28B8E19C-6BA2-4004-B4F9-685EB9B32286}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28B8E19C-6BA2-4004-B4F9-685EB9B32286}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAD1BE6E-2936-4641-BC36-DEF9BAD79810}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAD1BE6E-2936-4641-BC36-DEF9BAD79810}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAD1BE6E-2936-4641-BC36-DEF9BAD79810}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAD1BE6E-2936-4641-BC36-DEF9BAD79810}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

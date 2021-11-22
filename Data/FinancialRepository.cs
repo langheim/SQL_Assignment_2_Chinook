@@ -20,7 +20,7 @@ namespace SQL_Assignment_2_Chinook.Data
             {
                 Console.WriteLine($"Customer Id: {result.CustomerId}\t Total invoiced: {result.TotalSum}$");
             }
-            return invoiceGroup.ToArray();
+            return null;
         }
         public ChinookContext ChinookContext
         {

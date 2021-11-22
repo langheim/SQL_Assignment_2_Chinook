@@ -50,7 +50,7 @@ namespace SQL_Assignment_2_Chinook.Data
                     customer.Phone,
                     customer.Email);
             }
-            return getAllCustomers.ToArray();
+            return null;
         }
         public IEnumerable<Customer> GetNamedCustomers(string name)
         {
@@ -66,7 +66,7 @@ namespace SQL_Assignment_2_Chinook.Data
                         customer.Phone,
                         customer.Email);
             }
-            return getNamed.ToArray();
+            return null;
         }
         public ChinookContext ChinookContext
         {
